@@ -17,8 +17,13 @@ proc createDom(): VNode =
     hr()
     h2:
       text "Input"
-    input(`type` = "text", id = "userInput", onkeyup = editUser)
-    input(`type` = "text", id = "repoInput", onkeyup = editRepo)
+    ul:
+      li:
+        text "User:"
+        input(`type` = "text", id = "userInput", onkeyup = editUser)
+      li:
+        text "Repository:"
+        input(`type` = "text", id = "repoInput", onkeyup = editRepo)
     hr()
     h2:
       text "Output"
