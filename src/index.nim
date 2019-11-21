@@ -1,5 +1,18 @@
 import karax / [kbase, vdom, kdom, vstyles, karax, karaxdsl, jdict, jstrutils, jjson]
-import strformat
+import strformat, strutils
+
+type
+  Site = object
+    name, urlFmt: string
+
+const
+  sites = @[
+    Site(name: "GitHub Actions", urlFmt: "https://travis-ci.org/$1/$2.svg?branch=master"),
+    Site(name: "Nimble directory", urlFmt: "https://travis-ci.org/$1/$2.svg?branch=master"),
+    Site(name: "TravisCI", urlFmt: "https://travis-ci.org/$1/$2.svg?branch=master"),
+    Site(name: "CircleCI", urlFmt: "https://travis-ci.org/$1/$2.svg?branch=master"),
+    Site(name: "GitLabCI", urlFmt: "https://travis-ci.org/$1/$2.svg?branch=master"),
+    ]
 
 var
   user, repo: string
@@ -28,9 +41,11 @@ proc createDom(): VNode =
     h2:
       text "Output"
     tdiv:
-      h3:
-        text "TravisCI"
-      a(href = &"https://travis-ci.org/{user}/{repo}.svg?branch=master"):
-        img(src = &"https://travis-ci.org/{user}/{repo}.svg?branch=master", alt = "Build Status")
+      for site in sites:
+        h3:
+          text site.name
+        let url = site.urlFmt % [user, repo]
+        a(href = url):
+          img(src = url, alt = "Build Status")
 
 setRenderer createDom
