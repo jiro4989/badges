@@ -1199,7 +1199,7 @@ function wrap_event_189392(d_189394, n_189395, k_189396, action_189397) {
 									valueHEX3D_168839(n_189831, vHEX60gensym189838_189839);
 									if (!(!((action_189830 == null)))) {
 									F.line = 74;
-									failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
+									failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
 									}
 									
 									F.line = 75;
@@ -1258,7 +1258,7 @@ function wrap_event_189392(d_189394, n_189395, k_189396, action_189397) {
 							valueHEX3D_168839(n_189661, vHEX60gensym189665_189666);
 							if (!(!((action_189660 == null)))) {
 							F.line = 74;
-							failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
+							failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
 							}
 							
 							F.line = 75;
@@ -1306,7 +1306,7 @@ function wrap_event_189392(d_189394, n_189395, k_189396, action_189397) {
 							valueHEX3D_168839(n_189403, vHEX60gensym189425_189426);
 							if (!(!((action_189402 == null)))) {
 							F.line = 74;
-							failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
+							failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
 							}
 							
 							F.line = 75;
@@ -1505,7 +1505,7 @@ function to_dom_190167(n_190169, use_attached_node_190170, kxi_190171) {
 		result_190172 = n_190169.dom;
 		if (!(!((result_190172 == null)))) {
 		F.line = 156;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(156, 12) `result != nil` "));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(156, 12) `result != nil` "));
 		}
 		
 		F.line = 123;
@@ -1529,7 +1529,7 @@ function to_dom_190167(n_190169, use_attached_node_190170, kxi_190171) {
 		
 		if (!(!((x_190422.renderImpl == null)))) {
 		F.line = 163;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(163, 12) `x.renderImpl != nil` "));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(163, 12) `x.renderImpl != nil` "));
 		}
 		
 		if ((x_190422.expanded == null)) {
@@ -1539,7 +1539,7 @@ function to_dom_190167(n_190169, use_attached_node_190170, kxi_190171) {
 		
 		if (!(!((x_190422.expanded == null)))) {
 		F.line = 167;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(167, 12) `x.expanded != nil` "));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(167, 12) `x.expanded != nil` "));
 		}
 		
 		F.line = 168;
@@ -2319,7 +2319,7 @@ function diff_193245(new_node_193247, old_node_193248, parent_193249, current_19
 			var min_length_193432 = nimMin(new_length_193430, old_length_193431);
 			if (!((old_node_193248.kind == new_node_193247.kind))) {
 			F.line = 463;
-			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(463, 12) `oldNode.kind == newNode.kind` "));
+			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(463, 12) `oldNode.kind == newNode.kind` "));
 			}
 			
 			F.line = 464;
@@ -2461,7 +2461,7 @@ function diff_193245(new_node_193247, old_node_193248, parent_193249, current_19
 		case 4:
 			if (true) {
 			F.line = 505;
-			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(505, 26) `false` eq returned usenewNode"));
+			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(505, 26) `false` eq returned usenewNode"));
 			}
 			
 			break;
@@ -2535,7 +2535,7 @@ function move_dom_192907(dest_192909, src_192910) {
 		src_192910.dom = null;
 		if (!((len_169728(dest_192909) == len_169728(src_192910)))) {
 		F.line = 366;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(366, 10) `dest.len == src.len` "));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(366, 10) `dest.len == src.len` "));
 		}
 		
 		L1: do {
@@ -2690,7 +2690,7 @@ function apply_patch_193022(kxi_193024) {
 						HEX5BHEX5DHEX3D_169768(p_193084.parent, p_193084.pos, p_193084.newChild);
 						if (!(!((p_193084.newChild.dom == null)))) {
 						F.line = 405;
-						failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(405, 12) `p.newChild.dom != nil` "));
+						failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(405, 12) `p.newChild.dom != nil` "));
 						}
 						
 						F.line = 2741;
@@ -2733,7 +2733,7 @@ function dodraw_196062(kxi_196064) {
 		else {
 			if (!(same_190920(kxi_196064.currentTree, document.getElementById(kxi_196064.rootId), 0))) {
 			F.line = 620;
-			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(620, 14) `same(kxi.currentTree, document.getElementById(kxi.rootId))` "));
+			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(620, 14) `same(kxi.currentTree, document.getElementById(kxi.rootId))` "));
 			}
 			
 			F.line = 621;
@@ -2750,7 +2750,7 @@ function dodraw_196062(kxi_196064) {
 		kxi_196064.currentTree = newtree_196070;
 		if (!(same_190920(kxi_196064.currentTree, document.getElementById(kxi_196064.rootId), 0))) {
 		F.line = 633;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/karax.nim(633, 12) `same(kxi.currentTree, document.getElementById(kxi.rootId))` "));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(633, 12) `same(kxi.currentTree, document.getElementById(kxi.rootId))` "));
 		}
 		
 		if (!((kxi_196064.postRenderCallback == null))) {
@@ -3947,7 +3947,7 @@ function set_attr_57197(s_57199, attr_57200, value_57201) {
 	framePtr = F;
 		if (!(!((value_57201 == null)))) {
 		F.line = 259;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2800/githubcom_pragmagickarax_1.1.0/karax/vstyles.nim(259, 12) `value != nil` value must not be nil"));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/vstyles.nim(259, 12) `value != nil` value must not be nil"));
 		}
 		
 		F.line = 260;
