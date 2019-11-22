@@ -86,10 +86,11 @@ proc createDom(): VNode =
                     span(class = "card-title"):
                       text site.name
                     for urlFmt in site.urlFmts:
-                      let url = urlFmt % [user, repo, branch, workflow, workflowName]
-                      p:
-                        a(href = url):
-                          img(src = url, alt = "Build Status")
+                      if user != "" and repo != "":
+                        let url = urlFmt % [user, repo, branch, workflow, workflowName]
+                        p:
+                          a(href = url):
+                            img(src = url, alt = "Build Status")
     footer(class = &"page-footer {baseColor}"):
       tdiv(class = "footer-copyright"):
         tdiv(class = "container"):
