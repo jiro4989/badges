@@ -47,7 +47,7 @@ proc createDom(): VNode =
         a(class = "brand-logo"): text "Badges"
     tdiv(class = "container"):
       tdiv:
-        tdiv:
+        tdiv(class = "section"):
           h2(class = textColor): text "Input"
           tdiv(class = "row"):
             # 3 column
@@ -76,8 +76,7 @@ proc createDom(): VNode =
                 branch = branchBuf
                 workflow = workflowBuf
                 workflowName = workflowNameBuf
-          hr()
-        tdiv:
+        tdiv(class = "section"):
           h2(class = textColor): text "Output"
           tdiv(class = "row"):
             for site in sites:
