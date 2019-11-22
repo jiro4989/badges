@@ -93,7 +93,8 @@ proc createDom(): VNode =
     footer(class = &"page-footer {baseColor}"):
       tdiv(class = "footer-copyright"):
         tdiv(class = "container"):
-          text "© 2019 jiro4989 "
+          text "© 2019 jiro4989, "
           a(href = "https://github.com/jiro4989/badges"): text "Repository"
+          text ", MIT License"
 
 setRenderer createDom
