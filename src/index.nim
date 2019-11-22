@@ -5,7 +5,8 @@ from uri import encodeUrl
 type
   Site = object
     name: string
-    urlFmts: seq[string]
+    badgeUrlFmts: seq[string]
+    siteUrlFmt: string
 
 # [![Coverage Status]()](https://coveralls.io/github/jiro4989/textimg?branch=master)
 
@@ -14,10 +15,11 @@ const
   cardColor = "blue-grey darken-2"
   textColor = "blue-grey-text darken-3"
   sites = @[
-    Site(name: "GitHub Actions", urlFmts: @["https://github.com/$1/$2/workflows/.github/workflows/$4/badge.svg", "https://github.com/$1/$2/workflows/$5/badge.svg"]),
-    Site(name: "TravisCI", urlFmts: @["https://travis-ci.org/$1/$2.svg?branch=$3"]),
-    Site(name: "CircleCI", urlFmts: @["https://circleci.com/gh/$1/$2/tree/$3.svg?style=svg"]),
-    Site(name: "Coveralls", urlFmts: @["https://coveralls.io/repos/github/$1/$2/badge.svg?branch=$3"]),
+    Site(name: "GitHub Actions", badgeUrlFmts: @["https://github.com/$1/$2/workflows/.github/workflows/$4/badge.svg", "https://github.com/$1/$2/workflows/$5/badge.svg"]),
+    Site(name: "TravisCI", badgeUrlFmts: @["https://travis-ci.org/$1/$2.svg?branch=$3"], siteUrlFmt: "https://travis-ci.org/$1/$2"),
+    Site(name: "CircleCI", badgeUrlFmts: @["https://circleci.com/gh/$1/$2/tree/$3.svg?style=svg"]),
+    Site(name: "Coveralls", badgeUrlFmts: @["https://coveralls.io/repos/github/$1/$2/badge.svg?branch=$3"]),
+    Site(name: "Codecov", badgeUrlFmts: @["https://codecov.io/gh/$1/$2/branch/$3/graph/badge.svg"]),
     ]
 
 var
@@ -39,6 +41,9 @@ proc editWorkflow(ev: Event; n: VNode) =
 
 proc editWorkflowName(ev: Event; n: VNode) =
   workflowNameBuf = encodeUrl($n.value, usePlus = false)
+
+proc showMarkdown(msg: string) =
+  window.alert(msg)
 
 proc createDom(): VNode =
   result = buildHtml(tdiv):
@@ -85,7 +90,7 @@ proc createDom(): VNode =
                   tdiv(class = "card-content white-text"):
                     span(class = "card-title"):
                       text site.name
-                    for urlFmt in site.urlFmts:
+                    for urlFmt in site.badgeUrlFmts:
                       if user != "" and repo != "":
                         let url = urlFmt % [user, repo, branch, workflow, workflowName]
                         p:
