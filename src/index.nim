@@ -16,17 +16,18 @@ const
     ]
 
 var
-  user, repo: string
-  branch = "master"
+  user, userBuf, repo, repoBuf: string
+  branchBuf = "master"
+  branch = branchBuf
 
 proc editUser(ev: Event; n: VNode) =
-  user = $n.value
+  userBuf = $n.value
 
 proc editRepo(ev: Event; n: VNode) =
-  repo = $n.value
+  repoBuf = $n.value
 
 proc editBranch(ev: Event; n: VNode) =
-  branch = $n.value
+  branchBuf = $n.value
 
 proc createDom(): VNode =
   result = buildHtml(tdiv):
@@ -53,7 +54,9 @@ proc createDom(): VNode =
             button(class = "waves-effect waves-light btn"):
               text "Show"
               proc onclick(ev: Event, n: VNode) =
-                echo "Clicked"
+                user = userBuf
+                repo = repoBuf
+                branch = branchBuf
           hr()
         tdiv:
           h2: text "Output"
