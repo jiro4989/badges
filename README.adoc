@@ -1,0 +1,3 @@
+= badges
+
+image:https://github.com/jiro4989/badges/workflows/gh-pages/badge.svg[]
