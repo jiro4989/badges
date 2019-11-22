@@ -1,22 +1,24 @@
 import karax / [kbase, vdom, kdom, vstyles, karax, karaxdsl, jdict, jstrutils, jjson]
 import strformat, strutils
+from uri import encodeUrl
 
 type
   Site = object
-    name, urlFmt: string
+    name: string
+    urlFmts: seq[string]
 
 # [![Coverage Status]()](https://coveralls.io/github/jiro4989/textimg?branch=master)
 
 const
   sites = @[
-    Site(name: "GitHub Actions", urlFmt: "https://github.com/$1/$2/workflows/.github/workflows/$4/badge.svg"),
-    Site(name: "TravisCI", urlFmt: "https://travis-ci.org/$1/$2.svg?branch=$3"),
-    Site(name: "CircleCI", urlFmt: "https://circleci.com/gh/$1/$2/tree/$3.svg?style=svg"),
-    Site(name: "Coveralls", urlFmt: "https://coveralls.io/repos/github/$1/$2/badge.svg?branch=$3"),
+    Site(name: "GitHub Actions", urlFmts: @["https://github.com/$1/$2/workflows/.github/workflows/$4/badge.svg", "https://github.com/$1/$2/workflows/$5/badge.svg"]),
+    Site(name: "TravisCI", urlFmts: @["https://travis-ci.org/$1/$2.svg?branch=$3"]),
+    Site(name: "CircleCI", urlFmts: @["https://circleci.com/gh/$1/$2/tree/$3.svg?style=svg"]),
+    Site(name: "Coveralls", urlFmts: @["https://coveralls.io/repos/github/$1/$2/badge.svg?branch=$3"]),
     ]
 
 var
-  user, userBuf, repo, repoBuf, workflow, workflowBuf: string
+  user, userBuf, repo, repoBuf, workflow, workflowBuf, workflowName, workflowNameBuf: string
   branchBuf = "master"
   branch = branchBuf
 
@@ -32,11 +34,14 @@ proc editBranch(ev: Event; n: VNode) =
 proc editWorkflow(ev: Event; n: VNode) =
   workflowBuf = $n.value
 
+proc editWorkflowName(ev: Event; n: VNode) =
+  workflowNameBuf = encodeUrl($n.value, usePlus = false)
+
 proc createDom(): VNode =
   result = buildHtml(tdiv):
     tdiv(class = "container"):
       tdiv:
-        h1: text "Badge generator"
+        h1: text "Badges"
         hr()
       tdiv:
         tdiv:
@@ -54,8 +59,11 @@ proc createDom(): VNode =
               input(`type` = "text", id = "branchInput", value = "master", onkeyup = editBranch)
               label(`for` = "branchInput"): text "Branch"
             tdiv(class = cls):
-              input(`type` = "text", id = "workflowInput", onkeyup = editWorkflow)
+              input(`type` = "text", id = "workflowInput", onkeyup = editWorkflow, placeholder = "workflow.yml")
               label(`for` = "workflowInput"): text "GitHub Actions workflow file"
+            tdiv(class = cls):
+              input(`type` = "text", id = "workflowNameInput", onkeyup = editWorkflowName)
+              label(`for` = "workflowNameInput"): text "GitHub Actions workflow name"
           tdiv(class = "row"):
             button(class = "waves-effect waves-light btn"):
               text "Show"
@@ -64,6 +72,7 @@ proc createDom(): VNode =
                 repo = repoBuf
                 branch = branchBuf
                 workflow = workflowBuf
+                workflowName = workflowNameBuf
           hr()
         tdiv:
           h2: text "Output"
@@ -74,9 +83,10 @@ proc createDom(): VNode =
                   tdiv(class = "card-content white-text"):
                     span(class = "card-title"):
                       text site.name
-                    let url = site.urlFmt % [user, repo, branch, workflow]
-                    p:
-                      a(href = url):
-                        img(src = url, alt = "Build Status")
+                    for urlFmt in site.urlFmts:
+                      let url = urlFmt % [user, repo, branch, workflow, workflowName]
+                      p:
+                        a(href = url):
+                          img(src = url, alt = "Build Status")
 
 setRenderer createDom
