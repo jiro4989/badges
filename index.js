@@ -470,8 +470,9 @@ var NNI110247 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind
 NTI110247.node = NNI110247;
 NTI169588.base = NTI140;
 NTI208017.base = NTI138;
-var NNI208015 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "name", len: 0, typ: NTI138, name: "name", sons: null}, 
-{kind: 1, offset: "urlFmts", len: 0, typ: NTI208017, name: "urlFmts", sons: null}]};
+var NNI208015 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "name", len: 0, typ: NTI138, name: "name", sons: null}, 
+{kind: 1, offset: "badgeUrlFmts", len: 0, typ: NTI208017, name: "badgeUrlFmts", sons: null}, 
+{kind: 1, offset: "siteUrlFmt", len: 0, typ: NTI138, name: "siteUrlFmt", sons: null}]};
 NTI208015.node = NNI208015;
 
 function makeNimstrLit(c_23270) {
@@ -840,7 +841,7 @@ function addChar(x_25311, c_25312) {
 
 	
 }
-						var sites_208081 = [{name: makeNimstrLit("GitHub Actions"), urlFmts: [makeNimstrLit("https://github.com/$1/$2/workflows/.github/workflows/$4/badge.svg"), makeNimstrLit("https://github.com/$1/$2/workflows/$5/badge.svg")]}, {name: makeNimstrLit("TravisCI"), urlFmts: [makeNimstrLit("https://travis-ci.org/$1/$2.svg?branch=$3")]}, {name: makeNimstrLit("CircleCI"), urlFmts: [makeNimstrLit("https://circleci.com/gh/$1/$2/tree/$3.svg?style=svg")]}, {name: makeNimstrLit("Coveralls"), urlFmts: [makeNimstrLit("https://coveralls.io/repos/github/$1/$2/badge.svg?branch=$3")]}];
+						var sites_208094 = [{name: makeNimstrLit("GitHub Actions"), badgeUrlFmts: [makeNimstrLit("https://github.com/$1/$2/workflows/.github/workflows/$4/badge.svg"), makeNimstrLit("https://github.com/$1/$2/workflows/$5/badge.svg")], siteUrlFmt: []}, {name: makeNimstrLit("TravisCI"), badgeUrlFmts: [makeNimstrLit("https://travis-ci.org/$1/$2.svg?branch=$3")], siteUrlFmt: makeNimstrLit("https://travis-ci.org/$1/$2")}, {name: makeNimstrLit("CircleCI"), badgeUrlFmts: [makeNimstrLit("https://circleci.com/gh/$1/$2/tree/$3.svg?style=svg")], siteUrlFmt: []}, {name: makeNimstrLit("Coveralls"), badgeUrlFmts: [makeNimstrLit("https://coveralls.io/repos/github/$1/$2/badge.svg?branch=$3")], siteUrlFmt: []}, {name: makeNimstrLit("Codecov"), badgeUrlFmts: [makeNimstrLit("https://codecov.io/gh/$1/$2/branch/$3/graph/badge.svg")], siteUrlFmt: []}];
 		var to_style_attr_name_56663 = ["alignContent", "alignItems", "alignSelf", "animation", "animationDelay", "animationDirection", "animationDuration", "animationFillMode", "animationIterationCount", "animationName", "animationTimingFunction", "animationPlayState", "background", "backgroundAttachment", "backgroundColor", "backgroundImage", "backgroundPosition", "backgroundRepeat", "backgroundClip", "backgroundOrigin", "backgroundSize", "backfaceVisibility", "border", "borderBottom", "borderBottomColor", "borderBottomLeftRadius", "borderBottomRightRadius", "borderBottomStyle", "borderBottomWidth", "borderCollapse", "borderColor", "borderImage", "borderImageOutset", "borderImageRepeat", "borderImageSlice", "borderImageSource", "borderImageWidth", "borderLeft", "borderLeftColor", "borderLeftStyle", "borderLeftWidth", "borderRadius", "borderRight", "borderRightColor", "borderRightStyle", "borderRightWidth", "borderSpacing", "borderStyle", "borderTop", "borderTopColor", "borderTopLeftRadius", "borderTopRightRadius", "borderTopStyle", "borderTopWidth", "borderWidth", "bottom", "boxDecorationBreak", "boxShadow", "boxSizing", "captionSide", "clear", "clip", "color", "columnCount", "columnFill", "columnGap", "columnRule", "columnRuleColor", "columnRuleStyle", "columnRuleWidth", "columns", "columnSpan", "columnWidth", "content", "counterIncrement", "counterReset", "cursor", "direction", "display", "emptyCells", "filter", "flex", "flexBasis", "flexDirection", "flexFlow", "flexGrow", "flexShrink", "flexWrap", "cssFloat", "font", "fontFamily", "fontSize", "fontSizeAdjust", "fontStretch", "fontStyle", "fontVariant", "fontWeight", "hangingPunctuation", "height", "hyphens", "icon", "imageOrientation", "justifyContent", "left", "letterSpacing", "lineHeight", "listStyle", "listStyleImage", "listStylePosition", "listStyleType", "margin", "marginBottom", "marginLeft", "marginRight", "marginTop", "maxHeight", "maxWidth", "minHeight", "minWidth", "navDown", "navIndex", "navLeft", "navRight", "navUp", "opacity", "order", "orphans", "outline", "outlineColor", "outlineOffset", "outlineStyle", "outlineWidth", "overflow", "overflowX", "overflowY", "padding", "paddingBottom", "paddingLeft", "paddingRight", "paddingTop", "pageBreakAfter", "pageBreakBefore", "pageBreakInside", "perspective", "perspectiveOrigin", "pointerEvents", "position", "quotes", "resize", "right", "scrollbar3dLightColor", "scrollbarArrowColor", "scrollbarBaseColor", "scrollbarDarkshadowColor", "scrollbarFaceColor", "scrollbarHighlightColor", "scrollbarShadowColor", "scrollbarTrackColor", "tableLayout", "tabSize", "textAlign", "textAlignLast", "textDecoration", "textDecorationColor", "textDecorationLine", "textDecorationStyle", "textIndent", "textJustify", "textOverflow", "textShadow", "textTransform", "top", "transform", "transformOrigin", "transformStyle", "transition", "transitionDelay", "transitionDuration", "transitionProperty", "transitionTimingFunction", "unicodeBidi", "userSelect", "verticalAlign", "visibility", "whiteSpace", "width", "wordBreak", "wordSpacing", "wordWrap", "widows", "zIndex"];
 
 function eqStrings(a_23641, b_23642) {
@@ -937,16 +938,16 @@ function nimCopyAux(dest_24832, src_24833, n_24835) {
 
 	
 }
-var user_208082 = [null];
-var user_buf_208083 = [null];
-var repo_208084 = [null];
-var repo_buf_208085 = [null];
-var workflow_208086 = [null];
-var workflow_buf_208087 = [null];
-var workflow_name_208088 = [null];
-var workflow_name_buf_208089 = [null];
-var branch_buf_208090 = [makeNimstrLit("master")];
-var branch_208091 = [nimCopy(null, branch_buf_208090[0], NTI138)];
+var user_208095 = [null];
+var user_buf_208096 = [null];
+var repo_208097 = [null];
+var repo_buf_208098 = [null];
+var workflow_208099 = [null];
+var workflow_buf_208100 = [null];
+var workflow_name_208101 = [null];
+var workflow_name_buf_208102 = [null];
+var branch_buf_208103 = [makeNimstrLit("master")];
+var branch_208104 = [nimCopy(null, branch_buf_208103[0], NTI138)];
 
 function add_18638(x_18641, x_18641_Idx, y_18642) {
 		      if (x_18641[x_18641_Idx] === null) { x_18641[x_18641_Idx] = []; }
@@ -1199,7 +1200,7 @@ function wrap_event_189392(d_189394, n_189395, k_189396, action_189397) {
 									valueHEX3D_168839(n_189831, vHEX60gensym189838_189839);
 									if (!(!((action_189830 == null)))) {
 									F.line = 74;
-									failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
+									failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
 									}
 									
 									F.line = 75;
@@ -1258,7 +1259,7 @@ function wrap_event_189392(d_189394, n_189395, k_189396, action_189397) {
 							valueHEX3D_168839(n_189661, vHEX60gensym189665_189666);
 							if (!(!((action_189660 == null)))) {
 							F.line = 74;
-							failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
+							failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
 							}
 							
 							F.line = 75;
@@ -1306,7 +1307,7 @@ function wrap_event_189392(d_189394, n_189395, k_189396, action_189397) {
 							valueHEX3D_168839(n_189403, vHEX60gensym189425_189426);
 							if (!(!((action_189402 == null)))) {
 							F.line = 74;
-							failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
+							failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(74, 10) `action != nil` "));
 							}
 							
 							F.line = 75;
@@ -1505,7 +1506,7 @@ function to_dom_190167(n_190169, use_attached_node_190170, kxi_190171) {
 		result_190172 = n_190169.dom;
 		if (!(!((result_190172 == null)))) {
 		F.line = 156;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(156, 12) `result != nil` "));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(156, 12) `result != nil` "));
 		}
 		
 		F.line = 123;
@@ -1529,7 +1530,7 @@ function to_dom_190167(n_190169, use_attached_node_190170, kxi_190171) {
 		
 		if (!(!((x_190422.renderImpl == null)))) {
 		F.line = 163;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(163, 12) `x.renderImpl != nil` "));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(163, 12) `x.renderImpl != nil` "));
 		}
 		
 		if ((x_190422.expanded == null)) {
@@ -1539,7 +1540,7 @@ function to_dom_190167(n_190169, use_attached_node_190170, kxi_190171) {
 		
 		if (!(!((x_190422.expanded == null)))) {
 		F.line = 167;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(167, 12) `x.expanded != nil` "));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(167, 12) `x.expanded != nil` "));
 		}
 		
 		F.line = 168;
@@ -2319,7 +2320,7 @@ function diff_193245(new_node_193247, old_node_193248, parent_193249, current_19
 			var min_length_193432 = nimMin(new_length_193430, old_length_193431);
 			if (!((old_node_193248.kind == new_node_193247.kind))) {
 			F.line = 463;
-			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(463, 12) `oldNode.kind == newNode.kind` "));
+			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(463, 12) `oldNode.kind == newNode.kind` "));
 			}
 			
 			F.line = 464;
@@ -2461,7 +2462,7 @@ function diff_193245(new_node_193247, old_node_193248, parent_193249, current_19
 		case 4:
 			if (true) {
 			F.line = 505;
-			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(505, 26) `false` eq returned usenewNode"));
+			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(505, 26) `false` eq returned usenewNode"));
 			}
 			
 			break;
@@ -2535,7 +2536,7 @@ function move_dom_192907(dest_192909, src_192910) {
 		src_192910.dom = null;
 		if (!((len_169728(dest_192909) == len_169728(src_192910)))) {
 		F.line = 366;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(366, 10) `dest.len == src.len` "));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(366, 10) `dest.len == src.len` "));
 		}
 		
 		L1: do {
@@ -2690,7 +2691,7 @@ function apply_patch_193022(kxi_193024) {
 						HEX5BHEX5DHEX3D_169768(p_193084.parent, p_193084.pos, p_193084.newChild);
 						if (!(!((p_193084.newChild.dom == null)))) {
 						F.line = 405;
-						failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(405, 12) `p.newChild.dom != nil` "));
+						failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(405, 12) `p.newChild.dom != nil` "));
 						}
 						
 						F.line = 2741;
@@ -2733,7 +2734,7 @@ function dodraw_196062(kxi_196064) {
 		else {
 			if (!(same_190920(kxi_196064.currentTree, document.getElementById(kxi_196064.rootId), 0))) {
 			F.line = 620;
-			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(620, 14) `same(kxi.currentTree, document.getElementById(kxi.rootId))` "));
+			failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(620, 14) `same(kxi.currentTree, document.getElementById(kxi.rootId))` "));
 			}
 			
 			F.line = 621;
@@ -2750,7 +2751,7 @@ function dodraw_196062(kxi_196064) {
 		kxi_196064.currentTree = newtree_196070;
 		if (!(same_190920(kxi_196064.currentTree, document.getElementById(kxi_196064.rootId), 0))) {
 		F.line = 633;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/karax.nim(633, 12) `same(kxi.currentTree, document.getElementById(kxi.rootId))` "));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/karax.nim(633, 12) `same(kxi.currentTree, document.getElementById(kxi.rootId))` "));
 		}
 		
 		if (!((kxi_196064.postRenderCallback == null))) {
@@ -3651,41 +3652,41 @@ function add_event_handler_197948(n_197950, k_197951, action_197952, kxi_197953)
 	
 }
 
-function edit_user_208105(ev_208107, n_208108) {
+function edit_user_208118(ev_208120, n_208121) {
 	var F={procname:"index.editUser",prev:framePtr,filename:"index.nim",line:0};
 	framePtr = F;
-		F.line = 29;
-		user_buf_208083[0] = nimCopy(null, cstrToNimstr(value_168822(n_208108)), NTI138);
+		F.line = 31;
+		user_buf_208096[0] = nimCopy(null, cstrToNimstr(value_168822(n_208121)), NTI138);
 	framePtr = F.prev;
 
 	
 }
 
-function edit_repo_208122(ev_208124, n_208125) {
+function edit_repo_208135(ev_208137, n_208138) {
 	var F={procname:"index.editRepo",prev:framePtr,filename:"index.nim",line:0};
 	framePtr = F;
-		F.line = 32;
-		repo_buf_208085[0] = nimCopy(null, cstrToNimstr(value_168822(n_208125)), NTI138);
+		F.line = 34;
+		repo_buf_208098[0] = nimCopy(null, cstrToNimstr(value_168822(n_208138)), NTI138);
 	framePtr = F.prev;
 
 	
 }
 
-function edit_branch_208139(ev_208141, n_208142) {
+function edit_branch_208152(ev_208154, n_208155) {
 	var F={procname:"index.editBranch",prev:framePtr,filename:"index.nim",line:0};
 	framePtr = F;
-		F.line = 35;
-		branch_buf_208090[0] = nimCopy(null, cstrToNimstr(value_168822(n_208142)), NTI138);
+		F.line = 37;
+		branch_buf_208103[0] = nimCopy(null, cstrToNimstr(value_168822(n_208155)), NTI138);
 	framePtr = F.prev;
 
 	
 }
 
-function edit_workflow_208156(ev_208158, n_208159) {
+function edit_workflow_208169(ev_208171, n_208172) {
 	var F={procname:"index.editWorkflow",prev:framePtr,filename:"index.nim",line:0};
 	framePtr = F;
-		F.line = 38;
-		workflow_buf_208087[0] = nimCopy(null, cstrToNimstr(value_168822(n_208159)), NTI138);
+		F.line = 40;
+		workflow_buf_208100[0] = nimCopy(null, cstrToNimstr(value_168822(n_208172)), NTI138);
 	framePtr = F.prev;
 
 	
@@ -3864,11 +3865,11 @@ function encode_url_205054(s_205056, use_plus_205057) {
 
 }
 
-function edit_workflow_name_208173(ev_208175, n_208176) {
+function edit_workflow_name_208186(ev_208188, n_208189) {
 	var F={procname:"index.editWorkflowName",prev:framePtr,filename:"index.nim",line:0};
 	framePtr = F;
-		F.line = 41;
-		workflow_name_buf_208089[0] = nimCopy(null, encode_url_205054(cstrToNimstr(value_168822(n_208176)), false), NTI138);
+		F.line = 43;
+		workflow_name_buf_208102[0] = nimCopy(null, encode_url_205054(cstrToNimstr(value_168822(n_208189)), false), NTI138);
 	framePtr = F.prev;
 
 	
@@ -3947,7 +3948,7 @@ function set_attr_57197(s_57199, attr_57200, value_57201) {
 	framePtr = F;
 		if (!(!((value_57201 == null)))) {
 		F.line = 259;
-		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_3019/githubcom_pragmagickarax_1.1.0/karax/vstyles.nim(259, 12) `value != nil` value must not be nil"));
+		failed_assert_impl_15266(makeNimstrLit("/tmp/nimble_2765/githubcom_pragmagickarax_1.1.0/karax/vstyles.nim(259, 12) `value != nil` value must not be nil"));
 		}
 		
 		F.line = 260;
@@ -4552,292 +4553,292 @@ function nsuFormatOpenArray(formatstr_166202, a_166204) {
 
 }
 
-function create_dom_208190() {
+function create_dom_208219() {
 
-		function HEX3Aanonymous_208401(ev_208403, n_208404) {
+		function HEX3Aanonymous_208430(ev_208432, n_208433) {
 			var F={procname:"createDom.:anonymous",prev:framePtr,filename:"index.nim",line:0};
 			framePtr = F;
-				F.line = 74;
-				user_208082[0] = nimCopy(null, user_buf_208083[0], NTI138);
-				F.line = 75;
-				repo_208084[0] = nimCopy(null, repo_buf_208085[0], NTI138);
-				F.line = 76;
-				branch_208091[0] = nimCopy(null, branch_buf_208090[0], NTI138);
-				F.line = 77;
-				workflow_208086[0] = nimCopy(null, workflow_buf_208087[0], NTI138);
-				F.line = 78;
-				workflow_name_208088[0] = nimCopy(null, workflow_name_buf_208089[0], NTI138);
+				F.line = 79;
+				user_208095[0] = nimCopy(null, user_buf_208096[0], NTI138);
+				F.line = 80;
+				repo_208097[0] = nimCopy(null, repo_buf_208098[0], NTI138);
+				F.line = 81;
+				branch_208104[0] = nimCopy(null, branch_buf_208103[0], NTI138);
+				F.line = 82;
+				workflow_208099[0] = nimCopy(null, workflow_buf_208100[0], NTI138);
+				F.line = 83;
+				workflow_name_208101[0] = nimCopy(null, workflow_name_buf_208102[0], NTI138);
 			framePtr = F.prev;
 
 			
 		}
 											var Tmp7;
 
-	var result_208192 = null;
+	var result_208221 = null;
 
 	var F={procname:"index.createDom",prev:framePtr,filename:"index.nim",line:0};
 	framePtr = F;
-		F.line = 44;
-		F.line = 44;
-		var tmp_208235 = tree_171046(43, []);
-		F.line = 45;
-		var tmp_208236 = tree_171046(18, []);
-		F.line = 46;
-		var tmp_208237 = tree_171046(43, []);
-		F.line = 46;
-		F.line = 46;
-		var fmt_res_208295 = [mnewString(0)];
-		F.line = 46;
-		if (fmt_res_208295[0] != null) { fmt_res_208295[0] = (fmt_res_208295[0]).concat(makeNimstrLit("nav-wrapper ")); } else { fmt_res_208295[0] = makeNimstrLit("nav-wrapper "); };
-		F.line = 46;
-		format_value_202688(fmt_res_208295, 0, makeNimstrLit("blue-grey darken-1"), []);
-		tmp_208237.class = toJSStr(fmt_res_208295[0]);
-		F.line = 47;
-		var tmp_208243 = tree_171046(44, []);
-		F.line = 47;
-		tmp_208243.class = "brand-logo";
-		F.line = 47;
-		add_169786(tmp_208243, text_171164(makeNimstrLit("Badges")));
-		F.line = 47;
-		add_169786(tmp_208237, tmp_208243);
-		F.line = 47;
-		add_169786(tmp_208236, tmp_208237);
-		F.line = 47;
-		add_169786(tmp_208235, tmp_208236);
-		F.line = 48;
-		var tmp_208244 = tree_171046(43, []);
-		F.line = 48;
-		tmp_208244.class = "container";
 		F.line = 49;
-		var tmp_208245 = tree_171046(43, []);
-		F.line = 50;
-		var tmp_208246 = tree_171046(43, []);
-		F.line = 50;
-		tmp_208246.class = "section";
-		F.line = 51;
-		var tmp_208247 = tree_171046(22, []);
-		F.line = 15;
-		tmp_208247.class = "blue-grey-text darken-3";
-		F.line = 51;
-		add_169786(tmp_208247, text_171164(makeNimstrLit("Input")));
-		F.line = 51;
-		add_169786(tmp_208246, tmp_208247);
-		F.line = 52;
-		var tmp_208248 = tree_171046(43, []);
-		F.line = 52;
-		tmp_208248.class = "row";
-		F.line = 54;
-		var cls_208326 = (makeNimstrLit("input-field col s") || []).concat(cstrToNimstr((HEX2F_26817(12, 3))+"") || []);
-		F.line = 55;
-		var tmp_208249 = tree_171046(43, []);
-		F.line = 55;
-		tmp_208249.class = toJSStr(cls_208326);
-		F.line = 56;
-		var tmp_208250 = tree_171046(105, []);
-		F.line = 56;
-		set_attr_169568(tmp_208250, "type", "text");
-		F.line = 56;
-		tmp_208250.id = "userInput";
-		F.line = 56;
-		add_event_handler_197948(tmp_208250, 3, edit_user_208105, kxi_189326[0]);
-		F.line = 56;
-		add_169786(tmp_208249, tmp_208250);
-		F.line = 57;
-		var tmp_208251 = tree_171046(104, []);
-		F.line = 57;
-		set_attr_169568(tmp_208251, "for", "userInput");
-		F.line = 57;
-		add_169786(tmp_208251, text_171164(makeNimstrLit("User")));
-		F.line = 57;
-		add_169786(tmp_208249, tmp_208251);
-		F.line = 57;
-		add_169786(tmp_208248, tmp_208249);
-		F.line = 58;
-		var tmp_208252 = tree_171046(43, []);
-		F.line = 58;
-		tmp_208252.class = toJSStr(cls_208326);
-		F.line = 59;
-		var tmp_208253 = tree_171046(105, []);
-		F.line = 59;
-		set_attr_169568(tmp_208253, "type", "text");
-		F.line = 59;
-		tmp_208253.id = "repoInput";
-		F.line = 59;
-		add_event_handler_197948(tmp_208253, 3, edit_repo_208122, kxi_189326[0]);
-		F.line = 59;
-		add_169786(tmp_208252, tmp_208253);
-		F.line = 60;
-		var tmp_208254 = tree_171046(104, []);
-		F.line = 60;
-		set_attr_169568(tmp_208254, "for", "repoInput");
-		F.line = 60;
-		add_169786(tmp_208254, text_171164(makeNimstrLit("Repository")));
-		F.line = 60;
-		add_169786(tmp_208252, tmp_208254);
-		F.line = 60;
-		add_169786(tmp_208248, tmp_208252);
-		F.line = 61;
-		var tmp_208255 = tree_171046(43, []);
-		F.line = 61;
-		tmp_208255.class = toJSStr(cls_208326);
-		F.line = 62;
-		var tmp_208256 = tree_171046(105, []);
-		F.line = 62;
-		set_attr_169568(tmp_208256, "type", "text");
-		F.line = 62;
-		tmp_208256.id = "branchInput";
-		F.line = 62;
-		valueHEX3D_168839(tmp_208256, "master");
-		F.line = 62;
-		set_attr_169568(tmp_208256, "value", "master");
-		F.line = 62;
-		add_event_handler_197948(tmp_208256, 3, edit_branch_208139, kxi_189326[0]);
-		F.line = 62;
-		add_169786(tmp_208255, tmp_208256);
-		F.line = 63;
-		var tmp_208257 = tree_171046(104, []);
-		F.line = 63;
-		set_attr_169568(tmp_208257, "for", "branchInput");
-		F.line = 63;
-		add_169786(tmp_208257, text_171164(makeNimstrLit("Branch")));
-		F.line = 63;
-		add_169786(tmp_208255, tmp_208257);
-		F.line = 63;
-		add_169786(tmp_208248, tmp_208255);
-		F.line = 64;
-		var tmp_208258 = tree_171046(43, []);
-		F.line = 64;
-		tmp_208258.class = toJSStr(cls_208326);
-		F.line = 65;
-		var tmp_208259 = tree_171046(105, []);
-		F.line = 65;
-		set_attr_169568(tmp_208259, "type", "text");
-		F.line = 65;
-		tmp_208259.id = "workflowInput";
-		F.line = 65;
-		add_event_handler_197948(tmp_208259, 3, edit_workflow_208156, kxi_189326[0]);
-		F.line = 65;
-		set_attr_169568(tmp_208259, "placeholder", "workflow.yml");
-		F.line = 65;
-		add_169786(tmp_208258, tmp_208259);
-		F.line = 66;
-		var tmp_208260 = tree_171046(104, []);
-		F.line = 66;
-		set_attr_169568(tmp_208260, "for", "workflowInput");
-		F.line = 66;
-		add_169786(tmp_208260, text_171164(makeNimstrLit("GitHub Actions workflow file")));
-		F.line = 66;
-		add_169786(tmp_208258, tmp_208260);
-		F.line = 66;
-		add_169786(tmp_208248, tmp_208258);
-		F.line = 67;
-		var tmp_208261 = tree_171046(43, []);
-		F.line = 67;
-		tmp_208261.class = toJSStr(cls_208326);
-		F.line = 68;
-		var tmp_208262 = tree_171046(105, []);
-		F.line = 68;
-		set_attr_169568(tmp_208262, "type", "text");
-		F.line = 68;
-		tmp_208262.id = "workflowNameInput";
-		F.line = 68;
-		add_event_handler_197948(tmp_208262, 3, edit_workflow_name_208173, kxi_189326[0]);
-		F.line = 68;
-		add_169786(tmp_208261, tmp_208262);
-		F.line = 69;
-		var tmp_208263 = tree_171046(104, []);
-		F.line = 69;
-		set_attr_169568(tmp_208263, "for", "workflowNameInput");
-		F.line = 69;
-		add_169786(tmp_208263, text_171164(makeNimstrLit("GitHub Actions workflow name")));
-		F.line = 69;
-		add_169786(tmp_208261, tmp_208263);
-		F.line = 69;
-		add_169786(tmp_208248, tmp_208261);
-		F.line = 69;
-		add_169786(tmp_208246, tmp_208248);
-		F.line = 70;
+		F.line = 49;
 		var tmp_208264 = tree_171046(43, []);
-		F.line = 70;
-		tmp_208264.class = "row";
-		F.line = 71;
-		var tmp_208265 = tree_171046(106, []);
-		F.line = 71;
-		tmp_208265.class = "waves-effect waves-light btn";
-		F.line = 72;
-		add_169786(tmp_208265, text_171164(makeNimstrLit("Show")));
-		F.line = 73;
-		add_event_handler_197948(tmp_208265, 0, HEX3Aanonymous_208401, kxi_189326[0]);
-		F.line = 73;
-		add_169786(tmp_208264, tmp_208265);
-		F.line = 73;
-		add_169786(tmp_208246, tmp_208264);
-		F.line = 73;
-		add_169786(tmp_208245, tmp_208246);
-		F.line = 79;
+		F.line = 50;
+		var tmp_208265 = tree_171046(18, []);
+		F.line = 51;
 		var tmp_208266 = tree_171046(43, []);
-		F.line = 79;
-		tmp_208266.class = "section";
-		F.line = 80;
-		var tmp_208267 = tree_171046(22, []);
-		F.line = 15;
-		tmp_208267.class = "blue-grey-text darken-3";
-		F.line = 80;
-		add_169786(tmp_208267, text_171164(makeNimstrLit("Output")));
-		F.line = 80;
-		add_169786(tmp_208266, tmp_208267);
-		F.line = 81;
-		var tmp_208268 = tree_171046(43, []);
-		F.line = 81;
-		tmp_208268.class = "row";
+		F.line = 51;
+		F.line = 51;
+		var fmt_res_208324 = [mnewString(0)];
+		F.line = 51;
+		if (fmt_res_208324[0] != null) { fmt_res_208324[0] = (fmt_res_208324[0]).concat(makeNimstrLit("nav-wrapper ")); } else { fmt_res_208324[0] = makeNimstrLit("nav-wrapper "); };
+		F.line = 51;
+		format_value_202688(fmt_res_208324, 0, makeNimstrLit("blue-grey darken-1"), []);
+		tmp_208266.class = toJSStr(fmt_res_208324[0]);
+		F.line = 52;
+		var tmp_208272 = tree_171046(44, []);
+		F.line = 52;
+		tmp_208272.class = "brand-logo";
+		F.line = 52;
+		add_169786(tmp_208272, text_171164(makeNimstrLit("Badges")));
+		F.line = 52;
+		add_169786(tmp_208266, tmp_208272);
+		F.line = 52;
+		add_169786(tmp_208265, tmp_208266);
+		F.line = 52;
+		add_169786(tmp_208264, tmp_208265);
+		F.line = 53;
+		var tmp_208273 = tree_171046(43, []);
+		F.line = 53;
+		tmp_208273.class = "container";
+		F.line = 54;
+		var tmp_208274 = tree_171046(43, []);
+		F.line = 55;
+		var tmp_208275 = tree_171046(43, []);
+		F.line = 55;
+		tmp_208275.class = "section";
+		F.line = 56;
+		var tmp_208276 = tree_171046(22, []);
+		F.line = 16;
+		tmp_208276.class = "blue-grey-text darken-3";
+		F.line = 56;
+		add_169786(tmp_208276, text_171164(makeNimstrLit("Input")));
+		F.line = 56;
+		add_169786(tmp_208275, tmp_208276);
+		F.line = 57;
+		var tmp_208277 = tree_171046(43, []);
+		F.line = 57;
+		tmp_208277.class = "row";
+		F.line = 59;
+		var cls_208355 = (makeNimstrLit("input-field col s") || []).concat(cstrToNimstr((HEX2F_26817(12, 3))+"") || []);
+		F.line = 60;
+		var tmp_208278 = tree_171046(43, []);
+		F.line = 60;
+		tmp_208278.class = toJSStr(cls_208355);
+		F.line = 61;
+		var tmp_208279 = tree_171046(105, []);
+		F.line = 61;
+		set_attr_169568(tmp_208279, "type", "text");
+		F.line = 61;
+		tmp_208279.id = "userInput";
+		F.line = 61;
+		add_event_handler_197948(tmp_208279, 3, edit_user_208118, kxi_189326[0]);
+		F.line = 61;
+		add_169786(tmp_208278, tmp_208279);
+		F.line = 62;
+		var tmp_208280 = tree_171046(104, []);
+		F.line = 62;
+		set_attr_169568(tmp_208280, "for", "userInput");
+		F.line = 62;
+		add_169786(tmp_208280, text_171164(makeNimstrLit("User")));
+		F.line = 62;
+		add_169786(tmp_208278, tmp_208280);
+		F.line = 62;
+		add_169786(tmp_208277, tmp_208278);
+		F.line = 63;
+		var tmp_208281 = tree_171046(43, []);
+		F.line = 63;
+		tmp_208281.class = toJSStr(cls_208355);
+		F.line = 64;
+		var tmp_208282 = tree_171046(105, []);
+		F.line = 64;
+		set_attr_169568(tmp_208282, "type", "text");
+		F.line = 64;
+		tmp_208282.id = "repoInput";
+		F.line = 64;
+		add_event_handler_197948(tmp_208282, 3, edit_repo_208135, kxi_189326[0]);
+		F.line = 64;
+		add_169786(tmp_208281, tmp_208282);
+		F.line = 65;
+		var tmp_208283 = tree_171046(104, []);
+		F.line = 65;
+		set_attr_169568(tmp_208283, "for", "repoInput");
+		F.line = 65;
+		add_169786(tmp_208283, text_171164(makeNimstrLit("Repository")));
+		F.line = 65;
+		add_169786(tmp_208281, tmp_208283);
+		F.line = 65;
+		add_169786(tmp_208277, tmp_208281);
+		F.line = 66;
+		var tmp_208284 = tree_171046(43, []);
+		F.line = 66;
+		tmp_208284.class = toJSStr(cls_208355);
+		F.line = 67;
+		var tmp_208285 = tree_171046(105, []);
+		F.line = 67;
+		set_attr_169568(tmp_208285, "type", "text");
+		F.line = 67;
+		tmp_208285.id = "branchInput";
+		F.line = 67;
+		valueHEX3D_168839(tmp_208285, "master");
+		F.line = 67;
+		set_attr_169568(tmp_208285, "value", "master");
+		F.line = 67;
+		add_event_handler_197948(tmp_208285, 3, edit_branch_208152, kxi_189326[0]);
+		F.line = 67;
+		add_169786(tmp_208284, tmp_208285);
+		F.line = 68;
+		var tmp_208286 = tree_171046(104, []);
+		F.line = 68;
+		set_attr_169568(tmp_208286, "for", "branchInput");
+		F.line = 68;
+		add_169786(tmp_208286, text_171164(makeNimstrLit("Branch")));
+		F.line = 68;
+		add_169786(tmp_208284, tmp_208286);
+		F.line = 68;
+		add_169786(tmp_208277, tmp_208284);
+		F.line = 69;
+		var tmp_208287 = tree_171046(43, []);
+		F.line = 69;
+		tmp_208287.class = toJSStr(cls_208355);
+		F.line = 70;
+		var tmp_208288 = tree_171046(105, []);
+		F.line = 70;
+		set_attr_169568(tmp_208288, "type", "text");
+		F.line = 70;
+		tmp_208288.id = "workflowInput";
+		F.line = 70;
+		add_event_handler_197948(tmp_208288, 3, edit_workflow_208169, kxi_189326[0]);
+		F.line = 70;
+		set_attr_169568(tmp_208288, "placeholder", "workflow.yml");
+		F.line = 70;
+		add_169786(tmp_208287, tmp_208288);
+		F.line = 71;
+		var tmp_208289 = tree_171046(104, []);
+		F.line = 71;
+		set_attr_169568(tmp_208289, "for", "workflowInput");
+		F.line = 71;
+		add_169786(tmp_208289, text_171164(makeNimstrLit("GitHub Actions workflow file")));
+		F.line = 71;
+		add_169786(tmp_208287, tmp_208289);
+		F.line = 71;
+		add_169786(tmp_208277, tmp_208287);
+		F.line = 72;
+		var tmp_208290 = tree_171046(43, []);
+		F.line = 72;
+		tmp_208290.class = toJSStr(cls_208355);
+		F.line = 73;
+		var tmp_208291 = tree_171046(105, []);
+		F.line = 73;
+		set_attr_169568(tmp_208291, "type", "text");
+		F.line = 73;
+		tmp_208291.id = "workflowNameInput";
+		F.line = 73;
+		add_event_handler_197948(tmp_208291, 3, edit_workflow_name_208186, kxi_189326[0]);
+		F.line = 73;
+		add_169786(tmp_208290, tmp_208291);
+		F.line = 74;
+		var tmp_208292 = tree_171046(104, []);
+		F.line = 74;
+		set_attr_169568(tmp_208292, "for", "workflowNameInput");
+		F.line = 74;
+		add_169786(tmp_208292, text_171164(makeNimstrLit("GitHub Actions workflow name")));
+		F.line = 74;
+		add_169786(tmp_208290, tmp_208292);
+		F.line = 74;
+		add_169786(tmp_208277, tmp_208290);
+		F.line = 74;
+		add_169786(tmp_208275, tmp_208277);
+		F.line = 75;
+		var tmp_208293 = tree_171046(43, []);
+		F.line = 75;
+		tmp_208293.class = "row";
+		F.line = 76;
+		var tmp_208294 = tree_171046(106, []);
+		F.line = 76;
+		tmp_208294.class = "waves-effect waves-light btn";
+		F.line = 77;
+		add_169786(tmp_208294, text_171164(makeNimstrLit("Show")));
+		F.line = 78;
+		add_event_handler_197948(tmp_208294, 0, HEX3Aanonymous_208430, kxi_189326[0]);
+		F.line = 78;
+		add_169786(tmp_208293, tmp_208294);
+		F.line = 78;
+		add_169786(tmp_208275, tmp_208293);
+		F.line = 78;
+		add_169786(tmp_208274, tmp_208275);
+		F.line = 84;
+		var tmp_208295 = tree_171046(43, []);
+		F.line = 84;
+		tmp_208295.class = "section";
+		F.line = 85;
+		var tmp_208296 = tree_171046(22, []);
+		F.line = 16;
+		tmp_208296.class = "blue-grey-text darken-3";
+		F.line = 85;
+		add_169786(tmp_208296, text_171164(makeNimstrLit("Output")));
+		F.line = 85;
+		add_169786(tmp_208295, tmp_208296);
+		F.line = 86;
+		var tmp_208297 = tree_171046(43, []);
+		F.line = 86;
+		tmp_208297.class = "row";
 		L1: do {
-			F.line = 82;
-			var site_208614 = {name: null, urlFmts: null};
+			F.line = 87;
+			var site_208614 = {name: null, badgeUrlFmts: null, siteUrlFmt: null};
 			F.line = 184;
 			var i_209117 = 0;
 			F.line = 185;
-			var l_209118 = 4;
+			var l_209118 = 5;
 			L2: do {
 				F.line = 186;
 					L3: while (true) {
 					if (!(i_209117 < l_209118)) break L3;
-						F.line = 82;
-						nimCopy(site_208614, sites_208081[chckIndx(i_209117, 0, sites_208081.length+0-1)-0], NTI208015);
-						F.line = 83;
-						var tmp_208269 = tree_171046(43, []);
-						F.line = 83;
-						tmp_208269.class = "col s12 m4";
-						F.line = 83;
-						tmp_208269.style = style_57881(98, "200px");
-						F.line = 84;
-						var tmp_208270 = tree_171046(43, []);
-						F.line = 84;
-						F.line = 84;
+						F.line = 87;
+						nimCopy(site_208614, sites_208094[chckIndx(i_209117, 0, sites_208094.length+0-1)-0], NTI208015);
+						F.line = 88;
+						var tmp_208298 = tree_171046(43, []);
+						F.line = 88;
+						tmp_208298.class = "col s12 m4";
+						F.line = 88;
+						tmp_208298.style = style_57881(98, "200px");
+						F.line = 89;
+						var tmp_208299 = tree_171046(43, []);
+						F.line = 89;
+						F.line = 89;
 						var fmt_res_208624 = [mnewString(0)];
-						F.line = 84;
+						F.line = 89;
 						if (fmt_res_208624[0] != null) { fmt_res_208624[0] = (fmt_res_208624[0]).concat(makeNimstrLit("card ")); } else { fmt_res_208624[0] = makeNimstrLit("card "); };
-						F.line = 84;
+						F.line = 89;
 						format_value_202688(fmt_res_208624, 0, makeNimstrLit("blue-grey darken-2"), []);
-						tmp_208270.class = toJSStr(fmt_res_208624[0]);
-						F.line = 85;
-						var tmp_208271 = tree_171046(43, []);
-						F.line = 85;
-						tmp_208271.class = "card-content white-text";
-						F.line = 86;
-						var tmp_208272 = tree_171046(70, []);
-						F.line = 86;
-						tmp_208272.class = "card-title";
-						F.line = 87;
-						add_169786(tmp_208272, text_171164(site_208614.name));
-						F.line = 87;
-						add_169786(tmp_208271, tmp_208272);
+						tmp_208299.class = toJSStr(fmt_res_208624[0]);
+						F.line = 90;
+						var tmp_208300 = tree_171046(43, []);
+						F.line = 90;
+						tmp_208300.class = "card-content white-text";
+						F.line = 91;
+						var tmp_208301 = tree_171046(70, []);
+						F.line = 91;
+						tmp_208301.class = "card-title";
+						F.line = 92;
+						add_169786(tmp_208301, text_171164(site_208614.name));
+						F.line = 92;
+						add_169786(tmp_208300, tmp_208301);
 						L4: do {
-							F.line = 88;
+							F.line = 93;
 							var url_fmt_208814 = null;
 							F.line = 182;
 							var colontmp__209111 = null;
-							F.line = 88;
-							colontmp__209111 = site_208614.urlFmts;
+							F.line = 93;
+							colontmp__209111 = site_208614.badgeUrlFmts;
 							F.line = 184;
 							var i_209113 = 0;
 							F.line = 185;
@@ -4846,29 +4847,29 @@ function create_dom_208190() {
 								F.line = 186;
 									L6: while (true) {
 									if (!(i_209113 < l_209114)) break L6;
-										F.line = 88;
+										F.line = 93;
 										url_fmt_208814 = colontmp__209111[chckIndx(i_209113, 0, colontmp__209111.length+0-1)-0];
-											if (!!(eqStrings(user_208082[0], []))) Tmp7 = false; else {												Tmp7 = !(eqStrings(repo_208084[0], []));											}										if (Tmp7) {
-										F.line = 90;
-										var url_208821 = nsuFormatOpenArray(url_fmt_208814, [nimCopy(null, user_208082[0], NTI138), nimCopy(null, repo_208084[0], NTI138), nimCopy(null, branch_208091[0], NTI138), nimCopy(null, workflow_208086[0], NTI138), nimCopy(null, workflow_name_208088[0], NTI138)]);
-										F.line = 91;
-										var tmp_208273 = tree_171046(31, []);
-										F.line = 92;
-										var tmp_208274 = tree_171046(44, []);
-										F.line = 92;
-										set_attr_169568(tmp_208274, "href", toJSStr(url_208821));
-										F.line = 93;
-										var tmp_208275 = tree_171046(75, []);
-										F.line = 93;
-										set_attr_169568(tmp_208275, "src", toJSStr(url_208821));
-										F.line = 93;
-										set_attr_169568(tmp_208275, "alt", "Build Status");
-										F.line = 93;
-										add_169786(tmp_208274, tmp_208275);
-										F.line = 93;
-										add_169786(tmp_208273, tmp_208274);
-										F.line = 93;
-										add_169786(tmp_208271, tmp_208273);
+											if (!!(eqStrings(user_208095[0], []))) Tmp7 = false; else {												Tmp7 = !(eqStrings(repo_208097[0], []));											}										if (Tmp7) {
+										F.line = 95;
+										var url_208821 = nsuFormatOpenArray(url_fmt_208814, [nimCopy(null, user_208095[0], NTI138), nimCopy(null, repo_208097[0], NTI138), nimCopy(null, branch_208104[0], NTI138), nimCopy(null, workflow_208099[0], NTI138), nimCopy(null, workflow_name_208101[0], NTI138)]);
+										F.line = 96;
+										var tmp_208302 = tree_171046(31, []);
+										F.line = 97;
+										var tmp_208303 = tree_171046(44, []);
+										F.line = 97;
+										set_attr_169568(tmp_208303, "href", toJSStr(url_208821));
+										F.line = 98;
+										var tmp_208304 = tree_171046(75, []);
+										F.line = 98;
+										set_attr_169568(tmp_208304, "src", toJSStr(url_208821));
+										F.line = 98;
+										set_attr_169568(tmp_208304, "alt", "Build Status");
+										F.line = 98;
+										add_169786(tmp_208303, tmp_208304);
+										F.line = 98;
+										add_169786(tmp_208302, tmp_208303);
+										F.line = 98;
+										add_169786(tmp_208300, tmp_208302);
 										}
 										
 										F.line = 188;
@@ -4881,15 +4882,15 @@ function create_dom_208190() {
 									}
 							} while(false);
 						} while(false);
-						F.line = 93;
-						add_169786(tmp_208270, tmp_208271);
-						F.line = 93;
-						add_169786(tmp_208269, tmp_208270);
-						F.line = 93;
-						add_169786(tmp_208268, tmp_208269);
+						F.line = 98;
+						add_169786(tmp_208299, tmp_208300);
+						F.line = 98;
+						add_169786(tmp_208298, tmp_208299);
+						F.line = 98;
+						add_169786(tmp_208297, tmp_208298);
 						F.line = 188;
 						i_209117 = addInt(i_209117, 1);
-						if (!((4 == l_209118))) {
+						if (!((5 == l_209118))) {
 						F.line = 189;
 						failed_assert_impl_15266(makeNimstrLit("/home/runner/.choosenim/toolchains/nim-1.0.2/lib/system/iterators.nim(189, 11) `len(a) == L` the length of the seq changed while iterating over it"));
 						}
@@ -4897,54 +4898,54 @@ function create_dom_208190() {
 					}
 			} while(false);
 		} while(false);
-		F.line = 93;
-		add_169786(tmp_208266, tmp_208268);
-		F.line = 93;
-		add_169786(tmp_208245, tmp_208266);
-		F.line = 93;
-		add_169786(tmp_208244, tmp_208245);
-		F.line = 93;
-		add_169786(tmp_208235, tmp_208244);
-		F.line = 94;
-		var tmp_208276 = tree_171046(28, []);
-		F.line = 94;
-		F.line = 94;
+		F.line = 98;
+		add_169786(tmp_208295, tmp_208297);
+		F.line = 98;
+		add_169786(tmp_208274, tmp_208295);
+		F.line = 98;
+		add_169786(tmp_208273, tmp_208274);
+		F.line = 98;
+		add_169786(tmp_208264, tmp_208273);
+		F.line = 99;
+		var tmp_208305 = tree_171046(28, []);
+		F.line = 99;
+		F.line = 99;
 		var fmt_res_208838 = [mnewString(0)];
-		F.line = 94;
+		F.line = 99;
 		if (fmt_res_208838[0] != null) { fmt_res_208838[0] = (fmt_res_208838[0]).concat(makeNimstrLit("page-footer ")); } else { fmt_res_208838[0] = makeNimstrLit("page-footer "); };
-		F.line = 94;
+		F.line = 99;
 		format_value_202688(fmt_res_208838, 0, makeNimstrLit("blue-grey darken-1"), []);
-		tmp_208276.class = toJSStr(fmt_res_208838[0]);
-		F.line = 95;
-		var tmp_208277 = tree_171046(43, []);
-		F.line = 95;
-		tmp_208277.class = "footer-copyright";
-		F.line = 96;
-		var tmp_208278 = tree_171046(43, []);
-		F.line = 96;
-		tmp_208278.class = "container";
-		F.line = 97;
-		add_169786(tmp_208278, text_171164(makeNimstrLit("\xC2\xA9 2019 jiro4989, ")));
-		F.line = 98;
-		var tmp_208279 = tree_171046(44, []);
-		F.line = 98;
-		set_attr_169568(tmp_208279, "href", "https://github.com/jiro4989/badges");
-		F.line = 98;
-		add_169786(tmp_208279, text_171164(makeNimstrLit("Repository")));
-		F.line = 98;
-		add_169786(tmp_208278, tmp_208279);
-		F.line = 99;
-		add_169786(tmp_208278, text_171164(makeNimstrLit(", MIT License")));
-		F.line = 99;
-		add_169786(tmp_208277, tmp_208278);
-		F.line = 99;
-		add_169786(tmp_208276, tmp_208277);
-		F.line = 99;
-		add_169786(tmp_208235, tmp_208276);
-		result_208192 = tmp_208235;
+		tmp_208305.class = toJSStr(fmt_res_208838[0]);
+		F.line = 100;
+		var tmp_208306 = tree_171046(43, []);
+		F.line = 100;
+		tmp_208306.class = "footer-copyright";
+		F.line = 101;
+		var tmp_208307 = tree_171046(43, []);
+		F.line = 101;
+		tmp_208307.class = "container";
+		F.line = 102;
+		add_169786(tmp_208307, text_171164(makeNimstrLit("\xC2\xA9 2019 jiro4989, ")));
+		F.line = 103;
+		var tmp_208308 = tree_171046(44, []);
+		F.line = 103;
+		set_attr_169568(tmp_208308, "href", "https://github.com/jiro4989/badges");
+		F.line = 103;
+		add_169786(tmp_208308, text_171164(makeNimstrLit("Repository")));
+		F.line = 103;
+		add_169786(tmp_208307, tmp_208308);
+		F.line = 104;
+		add_169786(tmp_208307, text_171164(makeNimstrLit(", MIT License")));
+		F.line = 104;
+		add_169786(tmp_208306, tmp_208307);
+		F.line = 104;
+		add_169786(tmp_208305, tmp_208306);
+		F.line = 104;
+		add_169786(tmp_208264, tmp_208305);
+		result_208221 = tmp_208264;
 	framePtr = F.prev;
 
-	return result_208192;
+	return result_208221;
 
 }
-set_renderer_197801(create_dom_208190, "ROOT", null);
+set_renderer_197801(create_dom_208219, "ROOT", null);
