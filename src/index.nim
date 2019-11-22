@@ -10,6 +10,9 @@ type
 # [![Coverage Status]()](https://coveralls.io/github/jiro4989/textimg?branch=master)
 
 const
+  baseColor = "blue-grey darken-1"
+  cardColor = "blue-grey darken-2"
+  textColor = "blue-grey-text darken-3"
   sites = @[
     Site(name: "GitHub Actions", urlFmts: @["https://github.com/$1/$2/workflows/.github/workflows/$4/badge.svg", "https://github.com/$1/$2/workflows/$5/badge.svg"]),
     Site(name: "TravisCI", urlFmts: @["https://travis-ci.org/$1/$2.svg?branch=$3"]),
@@ -39,13 +42,13 @@ proc editWorkflowName(ev: Event; n: VNode) =
 
 proc createDom(): VNode =
   result = buildHtml(tdiv):
+    nav:
+      tdiv(class = &"nav-wrapper {baseColor}"):
+        a(class = "brand-logo"): text "Badges"
     tdiv(class = "container"):
       tdiv:
-        h1: text "Badges"
-        hr()
-      tdiv:
         tdiv:
-          h2: text "Input"
+          h2(class = textColor): text "Input"
           tdiv(class = "row"):
             # 3 column
             let cls = "input-field col s" & $(12/3)
@@ -75,11 +78,11 @@ proc createDom(): VNode =
                 workflowName = workflowNameBuf
           hr()
         tdiv:
-          h2: text "Output"
+          h2(class = textColor): text "Output"
           tdiv(class = "row"):
             for site in sites:
-              tdiv(class = "col s12 m4"):
-                tdiv(class = "card blue-grey darken-1"):
+              tdiv(class = "col s12 m4", style = style(StyleAttr.height, cstring"200px")):
+                tdiv(class = &"card {cardColor}"):
                   tdiv(class = "card-content white-text"):
                     span(class = "card-title"):
                       text site.name
@@ -88,5 +91,10 @@ proc createDom(): VNode =
                       p:
                         a(href = url):
                           img(src = url, alt = "Build Status")
+    footer(class = &"page-footer {baseColor}"):
+      tdiv(class = "footer-copyright"):
+        tdiv(class = "container"):
+          text "© 2019 Copyright jiro4989 "
+          a(href = "https://github.com/jiro4989/badges"): text "Repository"
 
 setRenderer createDom
