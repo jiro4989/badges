@@ -9,14 +9,14 @@ type
 
 const
   sites = @[
-    Site(name: "GitHub Actions", urlFmt: "https://github.com/$1/$2/workflows/.github/workflows/nim.yml/badge.svg"),
+    Site(name: "GitHub Actions", urlFmt: "https://github.com/$1/$2/workflows/.github/workflows/$4/badge.svg"),
     Site(name: "TravisCI", urlFmt: "https://travis-ci.org/$1/$2.svg?branch=$3"),
     Site(name: "CircleCI", urlFmt: "https://circleci.com/gh/$1/$2/tree/$3.svg?style=svg"),
     Site(name: "Coveralls", urlFmt: "https://coveralls.io/repos/github/$1/$2/badge.svg?branch=$3"),
     ]
 
 var
-  user, userBuf, repo, repoBuf: string
+  user, userBuf, repo, repoBuf, workflow, workflowBuf: string
   branchBuf = "master"
   branch = branchBuf
 
@@ -28,6 +28,9 @@ proc editRepo(ev: Event; n: VNode) =
 
 proc editBranch(ev: Event; n: VNode) =
   branchBuf = $n.value
+
+proc editWorkflow(ev: Event; n: VNode) =
+  workflowBuf = $n.value
 
 proc createDom(): VNode =
   result = buildHtml(tdiv):
@@ -50,6 +53,9 @@ proc createDom(): VNode =
             tdiv(class = cls):
               input(`type` = "text", id = "branchInput", value = "master", onkeyup = editBranch)
               label(`for` = "branchInput"): text "Branch"
+            tdiv(class = cls):
+              input(`type` = "text", id = "workflowInput", onkeyup = editWorkflow)
+              label(`for` = "workflowInput"): text "GitHub Actions workflow file"
           tdiv(class = "row"):
             button(class = "waves-effect waves-light btn"):
               text "Show"
@@ -57,6 +63,7 @@ proc createDom(): VNode =
                 user = userBuf
                 repo = repoBuf
                 branch = branchBuf
+                workflow = workflowBuf
           hr()
         tdiv:
           h2: text "Output"
@@ -67,7 +74,7 @@ proc createDom(): VNode =
                   tdiv(class = "card-content white-text"):
                     span(class = "card-title"):
                       text site.name
-                    let url = site.urlFmt % [user, repo, branch]
+                    let url = site.urlFmt % [user, repo, branch, workflow]
                     p:
                       a(href = url):
                         img(src = url, alt = "Build Status")
