@@ -15,11 +15,25 @@ const
   cardColor = "blue-grey darken-2"
   textColor = "blue-grey-text darken-3"
   sites = @[
-    Site(name: "GitHub Actions", badgeUrlFmts: @["https://github.com/$1/$2/workflows/.github/workflows/$4/badge.svg", "https://github.com/$1/$2/workflows/$5/badge.svg"]),
-    Site(name: "TravisCI", badgeUrlFmts: @["https://travis-ci.org/$1/$2.svg?branch=$3"], siteUrlFmt: "https://travis-ci.org/$1/$2"),
-    Site(name: "CircleCI", badgeUrlFmts: @["https://circleci.com/gh/$1/$2/tree/$3.svg?style=svg"]),
-    Site(name: "Coveralls", badgeUrlFmts: @["https://coveralls.io/repos/github/$1/$2/badge.svg?branch=$3"]),
-    Site(name: "Codecov", badgeUrlFmts: @["https://codecov.io/gh/$1/$2/branch/$3/graph/badge.svg"]),
+    Site(
+      name: "GitHub Actions",
+      badgeUrlFmts: @[
+        "https://github.com/$1/$2/workflows/.github/workflows/$4/badge.svg",
+        "https://github.com/$1/$2/workflows/$5/badge.svg",
+        ]),
+    Site(
+      name: "TravisCI",
+      badgeUrlFmts: @["https://travis-ci.org/$1/$2.svg?branch=$3"],
+      siteUrlFmt: "https://travis-ci.org/$1/$2"),
+    Site(
+      name: "CircleCI",
+      badgeUrlFmts: @["https://circleci.com/gh/$1/$2/tree/$3.svg?style=svg"]),
+    Site(
+      name: "Coveralls",
+      badgeUrlFmts: @["https://coveralls.io/repos/github/$1/$2/badge.svg?branch=$3"]),
+    Site(
+      name: "Codecov",
+      badgeUrlFmts: @["https://codecov.io/gh/$1/$2/branch/$3/graph/badge.svg"]),
     ]
 
 var
@@ -42,8 +56,9 @@ proc editWorkflow(ev: Event; n: VNode) =
 proc editWorkflowName(ev: Event; n: VNode) =
   workflowNameBuf = encodeUrl($n.value, usePlus = false)
 
-proc showMarkdown(msg: string) =
-  window.alert(msg)
+proc showMarkdown(msg: string): proc () =
+  result = proc() =
+    window.alert(msg)
 
 proc createDom(): VNode =
   result = buildHtml(tdiv):
@@ -58,7 +73,7 @@ proc createDom(): VNode =
             # 3 column
             let cls = "input-field col s" & $(12/3)
             tdiv(class = cls):
-              input(`type` = "text", id = "userInput", onkeyup = editUser)
+              input(`type` = "text", id = "userInput", onkeyup = editUser, setFocus = true)
               label(`for` = "userInput"): text "User"
             tdiv(class = cls):
               input(`type` = "text", id = "repoInput", onkeyup = editRepo)
@@ -92,10 +107,19 @@ proc createDom(): VNode =
                       text site.name
                     for urlFmt in site.badgeUrlFmts:
                       if user != "" and repo != "":
-                        let url = urlFmt % [user, repo, branch, workflow, workflowName]
+                        let badgeUrl = urlFmt % [user, repo, branch, workflow, workflowName]
+                        let siteUrl = site.siteUrlFmt % [user, repo, branch, workflow, workflowName]
+                        let t = &"[![Build Status]({badgeUrl})]({siteUrl})"
                         p:
-                          a(href = url):
-                            img(src = url, alt = "Build Status")
+                          a(href = badgeUrl):
+                            img(src = badgeUrl, alt = "Build Status")
+                        p:
+                          button(onclick = showMarkdown(t)):
+                            text "Markdown"
+                          button(onclick = showMarkdown(t)):
+                            text "Asciidoc"
+                          button(onclick = showMarkdown(t)):
+                            text "reStructuredText"
     footer(class = &"page-footer {baseColor}"):
       tdiv(class = "footer-copyright"):
         tdiv(class = "container"):
