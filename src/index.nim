@@ -113,13 +113,13 @@ proc createDom(): VNode =
                         p:
                           a(href = badgeUrl):
                             img(src = badgeUrl, alt = "Build Status")
-                        p:
-                          button(onclick = showMarkdown(t)):
-                            text "Markdown"
-                          button(onclick = showMarkdown(t)):
-                            text "Asciidoc"
-                          button(onclick = showMarkdown(t)):
-                            text "reStructuredText"
+                        # p:
+                        #   button(onclick = showMarkdown(t)):
+                        #     text "Markdown"
+                        #   button(onclick = showMarkdown(t)):
+                        #     text "Asciidoc"
+                        #   button(onclick = showMarkdown(t)):
+                        #     text "reStructuredText"
     footer(class = &"page-footer {baseColor}"):
       tdiv(class = "footer-copyright"):
         tdiv(class = "container"):
